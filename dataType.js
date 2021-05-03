@@ -31,3 +31,12 @@
     var str4 = String(52.35);
 
     console.log(str1,str2,str3,str4);
+    // ============================boolean===============
+    // if the answer always be either true or false then you called it boolean 
+    //literal
+    var b1 = true;
+    var b2 = false;
+    //constract
+    var b3 = Boolean(true);
+    var b4 = Boolean(false);
+    console.log(b3,b4);
