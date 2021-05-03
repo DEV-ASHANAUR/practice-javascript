@@ -8,3 +8,14 @@
     //*array 
     //*object 
     //*function
+
+    // ============================number===============
+
+    var n = 1425;
+    var f = 3.1416;
+    var nn = Number('45');
+    console.log(nn);
+    console.log(Number.MAX_VALUE);
+    console.log(Number.MIN_VALUE);
+    console.log('ami' * 54);
+    console.log(1/0);
