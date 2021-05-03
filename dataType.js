@@ -26,7 +26,7 @@
     var str1 = 'string';
     var str2 = "string";
     var string = `hello backtrict`;
-    //conventional
+    //constract
     var str3 = String(52);
     var str4 = String(52.35);
 
