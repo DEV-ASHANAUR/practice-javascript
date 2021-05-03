@@ -40,3 +40,11 @@
     var b3 = Boolean(true);
     var b4 = Boolean(false);
     console.log(b3,b4);
+
+    // ============ null vs undefined ===========
+    // A variable without value always store undifined
+    // A variable with unkhone value can store none
+
+    var abc
+    var xyz = null;
+    console.log(abc,xyz);
