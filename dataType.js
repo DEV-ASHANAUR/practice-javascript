@@ -19,3 +19,15 @@
     console.log(Number.MIN_VALUE);
     console.log('ami' * 54);
     console.log(1/0);
+
+    // ============================string===============
+    //AnyThing Wrepped between quote is called string
+    //literal
+    var str1 = 'string';
+    var str2 = "string";
+    var string = `hello backtrict`;
+    //conventional
+    var str3 = String(52);
+    var str4 = String(52.35);
+
+    console.log(str1,str2,str3,str4);
