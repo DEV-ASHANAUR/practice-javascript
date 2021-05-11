@@ -39,3 +39,14 @@ var b = 20;
      console.log(n+ ' is a odd number');
  }
 
+ //else-if
+
+if(n === 0){
+    console.log('n is zero');
+}else if(n % 2 === 0){
+    console.log(n+ ' is a even number');
+}else{
+    console.log(n+ ' is a odd number');
+}
+
+
