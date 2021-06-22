@@ -87,14 +87,37 @@
 
 // console.log(descriptor)
 
-var person = {
-    name: 'Ashanur'
+// var person = {
+//     name: 'Ashanur'
+// }
+
+// Object.defineProperty(person,"name",{
+//     enumerable:false, // loop able or not
+//     writable:false, // overwrite able or not
+//     configurable:false, // remove able or not
+//     value: "Md Ashanur Rahman" // default value set
+// });
+// end learn about descriptor
+
+// prototype vs instance
+
+function Square(width) {
+    this.width = width
+    this.getWidth = function() {
+        console.log('width is :'+this.width);
+        this.draw()
+    }
 }
 
-Object.defineProperty(person,"name",{
-    enumerable:false, // loop able or not
-    writable:false, // overwrite able or not
-    configurable:false, // remove able or not
-    value: "Md Ashanur Rahman" // default value set
-});
-// end learn about descriptor
+Square.prototype = {
+    draw : function () {
+        this.getWidth()
+        console.log('Draw')
+    },
+    toString: function() {
+        return 'My width is :'+this.width
+    }
+}
+
+var sqr1 = new Square(10)
+var sqr2 = new Square(20)
