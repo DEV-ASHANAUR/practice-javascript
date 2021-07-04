@@ -101,23 +101,131 @@
 
 // prototype vs instance
 
-function Square(width) {
-    this.width = width
-    this.getWidth = function() {
-        console.log('width is :'+this.width);
-        this.draw()
-    }
+// function Square(width) {
+//     this.width = width
+//     this.getWidth = function() {
+//         console.log('width is :'+this.width);
+//         this.draw()
+//     }
+// }
+
+// Square.prototype = {
+//     draw : function () {
+//         this.getWidth()
+//         console.log('Draw')
+//     },
+//     toString: function() {
+//         return 'My width is :'+this.width
+//     }
+// }
+
+// var sqr1 = new Square(10)
+// var sqr2 = new Square(20)
+
+// promise start
+
+
+// console.log("hello");
+
+// const promise1 = new Promise((resolve,reject)=>{
+//     let iscompleate = false;
+//     if(iscompleate){
+//         resolve('compleate promise1');
+//     }else{
+//         reject('reject promise1');
+//     }
+// });
+
+// const promise2 = new Promise((resolve,reject)=>{
+//     resolve('compleate promise 2')
+// })
+
+// // if fullfill the promise
+// promise1.then((res)=>{
+//     console.log(res);
+// }).catch((err)=>{
+//     console.log(err)
+// })
+
+// //2nd promise 
+
+// promise2.then((res)=>{
+//     console.log(res);
+// })
+
+// we can show multiple promise at a time
+
+// Promise.all([promise1,promise2]).then(([res1,res2])=>{
+//     console.log(`${res1}  ${res2}`)
+// }).catch((err)=>{
+//     console.log(err)
+// })
+
+
+
+// see promise
+// console.log(promise1);
+
+
+// promise race
+
+// const promise1 = new Promise((resolve,reject)=>{
+//     setTimeout(()=>{
+//         resolve('complete promise 1');
+//     },2000)
+// });
+
+// const promise2 = new Promise((resolve,reject)=>{
+//     setTimeout(()=>{
+//         resolve('complete promise 2');
+//     },1000)
+// });
+
+// Promise.race([promise1,promise2]).then((res)=>{
+//     console.log(res);
+// })
+
+
+// chaning promise
+
+const taskOne = ()=>{
+    return new Promise((resolve,reject)=>{
+        resolve('task One is Completed');
+    });
 }
 
-Square.prototype = {
-    draw : function () {
-        this.getWidth()
-        console.log('Draw')
-    },
-    toString: function() {
-        return 'My width is :'+this.width
-    }
+const taskTwo = ()=>{
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve('task Two is Completed');
+        },3000)
+    });
+}
+const taskThree = ()=>{
+    return new Promise((resolve,reject)=>{
+        // resolve('task Three is Completed');
+        reject('task Three is rejected');
+    });
+}
+const taskFour = ()=>{
+    return new Promise((resolve,reject)=>{
+        resolve('task Four is Completed');
+    });
 }
 
-var sqr1 = new Square(10)
-var sqr2 = new Square(20)
+taskOne().then((res)=>{
+    console.log(res);
+}).
+then(taskTwo).then((res)=>{
+    console.log(res);
+}).then(taskThree).then((res)=>{
+    console.log(res)
+}).then(taskFour).then((res)=>{
+    console.log(res)
+}).catch((err)=>{
+    console.log(err)
+});
+
+
+
+
